@@ -5,38 +5,38 @@ const JavascriptObfuscator = require("webpack-obfuscator")
 const AutoxHeaderWebpackPlugin = require("autox-header-webpack-plugin")
 const WatchDeployPlugin = require("autox-deploy-webpack-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
-let scriptConfig = require("./scriptConfig.js")
+var scriptConfig = require("./scriptConfig.js")
 
-let headerFile = path.resolve(__dirname, scriptConfig.header)
-let headerText = fs.readFileSync(headerFile, "utf8").trim()
+var headerFile = path.resolve(__dirname, scriptConfig.header)
+var headerText = fs.readFileSync(headerFile, "utf8").trim()
 
-let dist = "./dist"
-let entry = {}
-let copyPatterns = []
-let projectsMain = {}
+var dist = "./dist"
+var entry = {}
+var copyPatterns = []
+var projectsMain = {}
 scriptConfig.projects.forEach((project) => {
     if (!project.compile) {
         return false
     }
-    let projectName = project.name
-    let outProjectName = scriptConfig.projectPrefix + project.name
+    var projectName = project.name
+    var outProjectName = scriptConfig.projectPrefix + project.name
     projectsMain[projectName] = project.main
 
-    let entryPathName = path.posix.resolve(scriptConfig.baseDir, projectName, project.main)
-    let outPathName = path.posix.resolve("/", outProjectName, project.main)
+    var entryPathName = path.posix.resolve(scriptConfig.baseDir, projectName, project.main)
+    var outPathName = path.posix.resolve("/", outProjectName, project.main)
     outPathName = outPathName.replace(".js", "").replace(".ts", "")
     entry[outPathName] = entryPathName
     if (project.others) {
-        for (const element of project.others) {
-            const fileName = element
+        for (let index = 0; index < project.others.length; index++) {
+            const fileName = project.others[index]
             const outFileName = path.posix.resolve("/", outProjectName, fileName).replace(".js", "").replace(".ts", "")
             entry[outFileName] = path.posix.resolve(scriptConfig.baseDir, projectName, fileName)
         }
     }
     //copy 文件
-    let fromPath = path.posix.resolve(scriptConfig.baseDir, projectName).replace(/\\/g, "/") + ""
-    let toPath = path.posix.resolve(dist, outProjectName).replace(/\\/g, "/") + ""
-    let pattern = {
+    var fromPath = path.posix.resolve(scriptConfig.baseDir, projectName).replace(/\\/g, "/") + ""
+    var toPath = path.posix.resolve(dist, outProjectName).replace(/\\/g, "/") + ""
+    var pattern = {
         from: fromPath,
         to: toPath,
         globOptions: {
@@ -47,7 +47,7 @@ scriptConfig.projects.forEach((project) => {
     copyPatterns.push(pattern)
 })
 module.exports = function (env, argv) {
-    let prod = argv.mode == "production"
+    var prod = argv.mode == "production"
     return {
         entry: entry,
         output: {
