@@ -1,15 +1,15 @@
 # 概述
 本项目是在 https://github.com/snailuncle/webpack-autojs 项目上魔改得来，
 
-本项目的目标是做个 [autoxjs](https://github.com/kkevsekk1/AutoX) （新的开源 autojs）项目的开发工具包，即 autox-cli   
-满足工程化（远离刀耕火种）：自动化管理个js类库，自动对源码，编译、混淆、dex加密、打包、部署，让开发人员专心写业务。   
-当然要实现 工程化，你需要有一些nodejs开发基础知识。到目前为止尚未封装出cli和dex加密，但是已经实现了除此之外的所以功能， 
-所以刚开始你会看到很多文件，请不要害怕，只关心下面文档中提到的几个文件即可。   
-项目 直接将编译和的js 转换为 class 转换为 dex 没有实现自动化，   
-(除非一开发的功能要授权之类的，其他情况下没有必要，转换为dex。要收费授权，和autojs设计的初衷和开源协议都是背离的。)   
-下一步将主要解决这个问题。欢迎有兴趣的fork项目一起实现。   
+本项目的目标是做个 [autoxjs](https://github.com/kkevsekk1/AutoX) （新的开源 autojs）项目的开发工具包，即 autox-cli
+满足工程化（远离刀耕火种）：自动化管理个js类库，自动对源码，编译、混淆、dex加密、打包、部署，让开发人员专心写业务。
+当然要实现 工程化，你需要有一些nodejs开发基础知识。到目前为止尚未封装出cli和dex加密，但是已经实现了除此之外的所以功能，
+所以刚开始你会看到很多文件，请不要害怕，只关心下面文档中提到的几个文件即可。
+项目 直接将编译和的js 转换为 class 转换为 dex 没有实现自动化，
+(除非一开发的功能要授权之类的，其他情况下没有必要，转换为dex。要收费授权，和autojs设计的初衷和开源协议都是背离的。)
+下一步将主要解决这个问题。欢迎有兴趣的fork项目一起实现。
 
-[优酷视频讲解](https://v.youku.com/v_show/id_XNDg2NjA3NTYyMA==.html)  
+[优酷视频讲解](https://v.youku.com/v_show/id_XNDg2NjA3NTYyMA==.html)
 
 ## 项目特性清单
 - [x] js源码自动编译，混淆、打包、部署手机、重新运行
@@ -23,8 +23,8 @@
 1. 你需要安装 nodejs ，安装过程中请注意要 [ 将node添加PATH中 ] 和 安装 npm 这两个选项都要勾选上。(一般的前端工程师都有这个环节)
 2.  安装[vscode](https://code.visualstudio.com/) 并安装 autoxjs开发插件即：[Auto.js-VSCodeExt-Fixed](https://marketplace.visualstudio.com/items?itemName=aaroncheng.auto-js-vsce-fixed)  注意是0.3.11 或以上版本。 （ctr+ shift+p 选择autojs 启动服务）
 3.  安装全局安装 webpack： ``` npm i -g webpack webpack-cli --registry=https://registry.npm.taobao.org ```
-4.  [下载本项目](https://github.com/kkevsekk1/webpack-autojs/archive/master.zip) 或git clone 项目  ``` git clone https://github.com/kkevsekk1/webpack-autojs.git ``` 
-    
+4.  [下载本项目](https://github.com/zsjsll/webpack-autojs/archive/master.zip) 或git clone 项目  ``` git clone https://github.com/zsjsll/webpack-autojs.git ```
+
 5. cmd 到项目 ， 运行命令，安装依赖
     ```npm install --registry=https://registry.npm.taobao.org ```
 
@@ -32,23 +32,23 @@
 
 # 项目开发、编译、打包、部署介绍
 
-1. work 目录： 这就是我们项目的总目录，即这里面每一个文件夹是一个autoxjs 项目。比如我们 demo,demo1,dy 即为3个项目。 
+1. work 目录： 这就是我们项目的总目录，即这里面每一个文件夹是一个autoxjs 项目。比如我们 demo,demo1,dy 即为3个项目。
 2. scriptConfig.js 文件： 我们要如何编译项目即在这个文件中配置，打开文件，有注释的可以按照注释改。
 3. header.txt 无关紧要的文件，里面的内容会原封不动的添加到 编译后的js代码头部
 4. 调整好上面 3处内容 就可用编译了我们的项目了
 5. package.json 这个文件规定 看 第6-9行，有两个命令 start 和 build 分别对应开发环境和生成环境的编译，无需修改。只要知道他们 分别对应 npm run start 和 npm run build 。
 6. 运行 ```npm run start ``` 即开发环境，没每次修改代码，代码会自动编译，并且 scriptConfig.js 中的wath配置为'rerun'或'deploy' 那么代码将自动在手机中运行 或自动将重新编译的项目保存到手机中。
 7. dist目录： 运行上面编译命令（ start或build），就有编译的结果，编译的结果就 dist目录中，这目录下每一个目录代表的就是一个编译后的autoxjs项目.编译后的目录的名称 可以配置一个前缀，以便和编译前的项目区分（当他们都以项目形式保存手中的时候就很有必要）。
-8.``` npm run start ``` 这个
+8. ``` npm run start ``` 这个
 
 # 编译 dex
 1. [使用工具](https://github.com/molysama/auto.pro/wiki/dex) 的来源。我用这个工具来打包，不打算重复造轮子了
-2. [安装jre](https://www.baidu.com/s?ie=UTF-8&wd=jre)   
+2. [安装jre](https://www.baidu.com/s?ie=UTF-8&wd=jre)
 3. 安装 auto-cli ``` npm i "@auto.pro/cli" -g ```
-4. 运行编译命令 ``` auto-cli dex ./dist/demo/main.js ``` 
+4. 运行编译命令 ``` auto-cli dex ./dist/demo/main.js ```
 5. 如果由于愿意写个 webpapck 插件 ，来执行这里几个命令，实现自动化愿意 pull 代码，我没打算对我的代码 编译为dex 再加固，所以没有动力实现这个插件！
 
-# 其他说明1: 
+# 其他说明1:
 1. 主要配置文件就一个`scriptConfig.js`
 2. `header.txt` 该文件中的内容会被添加到打包后的文件的头部, 默认为空.
 3. `uiMode` true: ui模式, false 非ui模式
