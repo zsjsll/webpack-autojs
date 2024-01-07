@@ -1,8 +1,5 @@
-import t from "./module/tools"
+import { QQ } from "./module/app"
 
-toast("Hello, AutoX.js")
+let Q = new QQ("nihao")
 
-
-
-let k = t.startAPP("com.alibaba.android.rimet")
-console.log(k)
+Q.callname()
