@@ -1,5 +1,3 @@
-import { QQ } from "./module/app"
+const a=123
 
-let Q = new QQ("nihao")
-
-Q.callname()
+0015561213
