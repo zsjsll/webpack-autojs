@@ -22,11 +22,11 @@
 # 使用方法
 1. 你需要安装 nodejs ，安装过程中请注意要 [ 将node添加PATH中 ] 和 安装 npm 这两个选项都要勾选上。(一般的前端工程师都有这个环节)
 2.  安装[vscode](https://code.visualstudio.com/) 并安装 autoxjs开发插件即：[Auto.js-VSCodeExt-Fixed](https://marketplace.visualstudio.com/items?itemName=aaroncheng.auto-js-vsce-fixed)  注意是0.3.11 或以上版本。 （ctr+ shift+p 选择autojs 启动服务）
-3.  安装全局安装 webpack： ``` npm i -g webpack webpack-cli --registry=https://registry.npm.taobao.org ```
+3.  安装全局安装 webpack： ``` pnpm i -g webpack webpack-cli --registry=https://registry.npm.taobao.org ```
 4.  [下载本项目](https://github.com/zsjsll/webpack-autojs/archive/master.zip) 或git clone 项目  ``` git clone https://github.com/zsjsll/webpack-autojs.git ```
 
 5. cmd 到项目 ， 运行命令，安装依赖
-    ```npm install --registry=https://registry.npm.taobao.org ```
+    ```pnpm install --registry=https://registry.npm.taobao.org ```
 
 6.  到这来基本上可以说 开发环境 就完成了，（你还要一部手安装 autoxjs），下面说 这项目的配置文件和开发的形式。
 
@@ -44,7 +44,7 @@
 # 编译 dex
 1. [使用工具](https://github.com/molysama/auto.pro/wiki/dex) 的来源。我用这个工具来打包，不打算重复造轮子了
 2. [安装jre](https://www.baidu.com/s?ie=UTF-8&wd=jre)
-3. 安装 auto-cli ``` npm i "@auto.pro/cli" -g ```
+3. 安装 auto-cli ``` pnpm i "@auto.pro/cli" -g ```
 4. 运行编译命令 ``` auto-cli dex ./dist/demo/main.js ```
 5. 如果由于愿意写个 webpapck 插件 ，来执行这里几个命令，实现自动化愿意 pull 代码，我没打算对我的代码 编译为dex 再加固，所以没有动力实现这个插件！
 

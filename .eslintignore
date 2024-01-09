@@ -9,3 +9,5 @@ build/*
 ApplicationCenter/autojsDemo/*
 ApplicationCenter/pro商店脚本/*
 work/打卡/@types/*
+webpack.config.js
+scriptConfig.js

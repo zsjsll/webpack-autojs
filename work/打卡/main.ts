@@ -1,2 +1,4 @@
-const a=123
-console.log(a)
+import { QQ } from "./module/app"
+
+const qq = new QQ("com.tencent.tim", "124119885", "测试")
+qq.run()
