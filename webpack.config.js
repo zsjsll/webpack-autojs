@@ -153,14 +153,9 @@ module.exports = function (env, argv) {
                 {
                     test: /\.ts$/,
                     exclude: /node_modules/,
-                    use: [
-                        {
-                            loader: "babel-loader",
-                        },
-                        {
-                            loader: "webpack-autojs-loader",
-                        },
-                    ],
+                    use: {
+                        loader: "ts-loader",
+                    },
                 },
             ],
         },
