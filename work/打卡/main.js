@@ -1,3 +1,2 @@
 const a=123
-
-0015561213
+console.log(a)
