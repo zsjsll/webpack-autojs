@@ -5,8 +5,8 @@ let projects = [
         id: 1, //项目号
         compile: true, //是否编译
         name: "打卡", //项目名称，需要和文件夹名相同
-        main: "./main.ts", //主入文件，入口文件，按autojs目录，一般和project.json 同级
-        others: ["./main.ts"], //其他需要编译的文件,可以包含入口，也可不包含
+        main: "./main.js", //主入文件，入口文件，按autojs目录，一般和project.json 同级
+        others: ["./main.js"], //其他需要编译的文件,可以包含入口，也可不包含
     },
 ]
 
